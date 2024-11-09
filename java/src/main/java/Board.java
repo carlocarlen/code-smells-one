@@ -6,7 +6,7 @@ public class Board
     private static final Integer ROW_LENGTH = 3;
     private static final Integer COLUMN_LENGTH = 3;
 
-    private List<Tile> _plays = new ArrayList<>();
+    private final List<Tile> tiles = new ArrayList<>();
 
     public Board()
     {
@@ -18,14 +18,14 @@ public class Board
                 tile.X = i;
                 tile.Y = j;
                 tile.Symbol = ' ';
-                _plays.add(tile);
+                tiles.add(tile);
             }
         }
     }
 
     public Tile TileAt(int x, int y)
     {
-        return _plays.stream()
+        return tiles.stream()
                 .filter(tile -> tile.X == x && tile.Y == y)
                 .findFirst()
                 .orElse(null);
