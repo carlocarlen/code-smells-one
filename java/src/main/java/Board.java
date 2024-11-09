@@ -10,11 +10,11 @@ public class Board
 
     public Board()
     {
-        for (int i = 0; i < ROW_LENGTH; i++)
+        for (int x = 0; x < ROW_LENGTH; x++)
         {
-            for (int j = 0; j < COLUMN_LENGTH; j++)
+            for (int y = 0; y < COLUMN_LENGTH; y++)
             {
-                Tile tile = new Tile(i, j);
+                Tile tile = new Tile(x, y);
                 tiles.add(tile);
             }
         }
@@ -23,7 +23,7 @@ public class Board
     public Tile TileAt(int x, int y)
     {
         return tiles.stream()
-                .filter(tile -> tile.getX() == x && tile.getY() == y)
+                .filter(tile -> tile.hasPosition(x, y))
                 .findFirst()
                 .orElse(null);
     }

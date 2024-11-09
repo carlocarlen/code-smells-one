@@ -10,12 +10,8 @@ public class Tile
         this.y = y;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
+    public boolean hasPosition(int x, int y) {
+        return this.x == x && this.y == y;
     }
 
     public char getSymbol() {
