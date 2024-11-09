@@ -14,10 +14,7 @@ public class Board
         {
             for (int j = 0; j < COLUMN_LENGTH; j++)
             {
-                Tile tile = new Tile();
-                tile.X = i;
-                tile.Y = j;
-                tile.Symbol = ' ';
+                Tile tile = new Tile(i, j);
                 tiles.add(tile);
             }
         }
@@ -26,13 +23,13 @@ public class Board
     public Tile TileAt(int x, int y)
     {
         return tiles.stream()
-                .filter(tile -> tile.X == x && tile.Y == y)
+                .filter(tile -> tile.getX() == x && tile.getY() == y)
                 .findFirst()
                 .orElse(null);
     }
 
     public void AddTileAt(char symbol, int x, int y)
     {
-        TileAt(x,y).Symbol = symbol;
+        TileAt(x,y).setSymbol(symbol);
     }
 }
