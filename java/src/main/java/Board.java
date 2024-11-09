@@ -14,8 +14,7 @@ public class Board
         {
             for (int y = 0; y < COLUMN_LENGTH; y++)
             {
-                Tile tile = new Tile(x, y);
-                tiles.add(tile);
+                tiles.add(new Tile(x, y));
             }
         }
     }
